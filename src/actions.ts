@@ -1,10 +1,12 @@
 export const actions = [
   {
-    id: 'blog',
-    name: 'Blog',
-    shortcut: ['b'],
-    keywords: 'writing words',
-    perform: () => (window.location.pathname = 'blog'),
+    id: 'forward_msg',
+    name: 'Forward',
+    shortcut: ['f'],
+    keywords: 'forward',
+    perform: () => {
+      document.dispatchEvent(new KeyboardEvent('keypress', { key: 'F' }));
+    },
   },
   {
     id: 'contact',
