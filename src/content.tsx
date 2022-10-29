@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import GmailKBar from './components/GmailKBar';
+import { KBarProvider } from 'kbar';
+import { actions } from './actions';
 
 const Content = () => {
-  return (
-    <>
-      <button>I'm alive!</button>
-    </>
-  );
+  return <GmailKBar />;
 };
 
 const app = document.createElement('div');
@@ -17,7 +16,9 @@ document.body.appendChild(app);
 
 ReactDOM.render(
   <React.StrictMode>
-    <Content />
+    <KBarProvider actions={actions}>
+      <Content />
+    </KBarProvider>
   </React.StrictMode>,
   app
 );
